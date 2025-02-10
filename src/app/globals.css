@@ -1,165 +1,75 @@
-@import "tailwindcss";
-
-@theme {
-  --font-onset: var(--font-onset);
-  --font-dm-serif-display: var(--font-dm-serif-display);
-
-  --color-white-ct: #ffffff;
-  --color-black-ct: #0a0a0a;
-
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-
-  --color-primary-50: #e6f1ef;
-  --color-primary-100: #c2ddd8;
-  --color-primary-200: #91c2b9;
-  --color-primary-300: #5ea699;
-  --color-primary-400: #2e8b7a;
-  --color-primary-500: #00715d;
-  --color-primary-600: #00604f;
-  --color-primary-700: #005042;
-  --color-primary-800: #004035;
-  --color-primary-900: #00332a;
-
-  --color-success-50: #f0fdf4;
-  --color-success-100: #dcfce7;
-  --color-success-200: #bbf7d0;
-  --color-success-300: #86efac;
-  --color-success-400: #4ade80;
-  --color-success-500: #22c55e;
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-  --color-success-800: #166534;
-  --color-success-900: #14532d;
-
-  --color-info-50: #eff6ff;
-  --color-info-100: #dbeafe;
-  --color-info-200: #bfdbfe;
-  --color-info-300: #93c5fd;
-  --color-info-400: #60a5fa;
-  --color-info-500: #3b82f6;
-  --color-info-600: #2563eb;
-  --color-info-700: #1d4ed8;
-  --color-info-800: #1e40af;
-  --color-info-900: #1e3a8a;
-
-  --color-warning-50: #fefce8;
-  --color-warning-100: #fef9c3;
-  --color-warning-200: #fef08a;
-  --color-warning-300: #fde047;
-  --color-warning-400: #facc15;
-  --color-warning-500: #eab308;
-  --color-warning-600: #ca8a04;
-  --color-warning-700: #a16207;
-  --color-warning-800: #854d0e;
-  --color-warning-900: #713f12;
-
-  --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-200: #fecaca;
-  --color-error-300: #fca5a5;
-  --color-error-400: #f87171;
-  --color-error-500: #ef4444;
-  --color-error-600: #dc2626;
-  --color-error-700: #b91c1c;
-  --color-error-800: #991b1b;
-  --color-error-900: #7f1d1d;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@utility text-desktop-lg {
-  @apply font-dm-serif-display;
-  font-size: 72px;
-  line-height: 96px;
-}
-
-@utility text-desktop-md {
-  @apply font-dm-serif-display;
-  font-size: 64px;
-  line-height: 80px;
-}
-
-@utility text-desktop-sm {
-  @apply font-dm-serif-display;
-  font-size: 56px;
-  line-height: 72px;
-}
-
-@utility text-desktop-xs {
-  @apply font-dm-serif-display;
-  font-size: 48px;
-  line-height: 64px;
-}
-
-@utility text-desktop-h1 {
-  @apply font-dm-serif-display;
-  font-size: 40px;
-  line-height: 48px;
-}
-
-@utility text-desktop-h2 {
-  @apply font-dm-serif-display;
-  font-size: 32px;
-  line-height: 40px;
-}
-
-@utility text-desktop-h3 {
-  @apply font-dm-serif-display;
-  font-size: 28px;
-  line-height: 36px;
-}
-
-@utility text-desktop-h4 {
-  @apply font-dm-serif-display;
-  font-size: 24px;
-  line-height: 32px;
-}
-
-@utility text-desktop-h5 {
-  @apply font-dm-serif-display;
-  font-size: 20px;
-  line-height: 28px;
-}
-
-@utility text-desktop-h5 {
-  @apply font-dm-serif-display;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-@utility text-desktop-h5 {
-  @apply font-dm-serif-display;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-@utility text-body-xl {
-  @apply font-onset;
-  font-size: 18px;
-  line-height: 28px;
-}
-
-@utility text-body-lg {
-  @apply font-onset;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-@utility text-body-md {
-  @apply font-onset;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-@utility text-body-sm {
-  @apply font-onset;
-  font-size: 12px;
-  line-height: 18px;
+@layout utilities {
+  .border-border {
+  }
+  .bg-background {
+  }
+  .text-foreground {
+  }
 }
