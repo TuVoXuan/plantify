@@ -72,6 +72,15 @@ export const theme = {
       "error-800": "#991b1b",
       "error-900": "#7f1d1d",
     },
+    screens: {
+      xs: "320px",
+      sm: "576px",
+      md: "768px",
+      lg: "992px",
+      xl: "1200px",
+      "2xl": "1440px",
+      "3xl": "1920px",
+    },
   },
 };
 export const plugins = [typographyPlugin];

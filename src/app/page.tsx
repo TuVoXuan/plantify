@@ -1,3 +1,5 @@
+import { Input } from "@/components/ui/input";
+
 export default function Home() {
   return (
     <div>
@@ -6,6 +8,7 @@ export default function Home() {
         As a product designer, one's primary focus is to create user-centered designs that are both functional and
         aesthetically pleasing.
       </p>
+      <Input />
     </div>
   );
 }
