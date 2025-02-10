@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Serif_Display, Onest } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const oneset = Onest({
+  variable: "--font-onset",
   subsets: ["latin"],
 });
 
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${dmSerifDisplay.variable} ${oneset.variable}`}>{children}</body>
     </html>
   );
 }
