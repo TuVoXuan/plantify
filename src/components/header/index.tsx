@@ -6,7 +6,7 @@ import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerTr
 
 export default function Header() {
   return (
-    <header>
+    <header className="absolute top-0 left-0 right-0">
       <div className="bg-white-cs shadow-cs md:shadow-none py-5 px-4 flex justify-between md:bg-transparent md:py-3 md:px-0 md:border-b md:border-b-neutral-300 xl:py-5 container-cs">
         <div className="flex items-center gap-x-4">
           <Drawer direction="left">
