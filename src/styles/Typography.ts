@@ -72,5 +72,10 @@ export default plugin(({ addComponents, config }) => {
       fontSize: "12px",
       lineHeight: "18px",
     },
+    ".text-body-xs": {
+      fontFamily: config("theme.fontFamily.onset"),
+      fontSize: "10px",
+      lineHeight: "16px",
+    },
   });
 });

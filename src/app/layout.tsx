@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Onest } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
+import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -25,7 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSerifDisplay.variable} ${oneset.variable}`}>{children}</body>
+      <body className={cn(dmSerifDisplay.variable, oneset.variable, "2xl:max-w-[1440px] 2xl:mx-auto")}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
