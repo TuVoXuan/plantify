@@ -7,6 +7,7 @@ import carnivorous from "../assets/images/Carnivorous.png";
 import floweringPlants from "../assets/images/FloweringPlants.png";
 import foliagePlants from "../assets/images/FoliagePlants.png";
 import herbsPlants from "../assets/images/HerbsPlants.png";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -47,28 +48,33 @@ export default function Home() {
       </section>
       {/* Categories */}
       <section>
-        <div
+        <Carousel className="container-cs px-4 pt-10 pb-[56px] md:pt-[72px] md:pb-[64px] md:px-0 xl:pt-[48px] xl:pb-[112px]">
+          <CarouselContent className="-ml-5 md:-ml-[27.2px] xl:-ml-[64px]">
+            {plantCategories.map((cate) => (
+              <CarouselItem key={cate.title} className="pl-5 md:pl-[27.2px] xl:pl-[64px] basis-auto max-w-full">
+                <div key={cate.title} className="cursor-pointer w-fit flex flex-col gap-2 items-center xl:gap-y-5">
+                  <div className="h-[76px] w-[76px] md:w-[93px] md:h-[93px] xl:h-[160px] xl:w-[160px] bg-white-cs rounded-t-full pt-[13px] pb-[6px] px-[10px] md:pt-[16.27px] md:px-[11.62px] md:pb-[6.98px] xl:pt-[28px] xl:px-5 xl:pb-3">
+                    <div className="h-[57px] w-[57px] md:w-[69.75px] md:h-[69.75px] xl:w-[120px] xl:h-[120px]">
+                      <Image
+                        src={cate.thumbnail.src}
+                        height={cate.thumbnail.height}
+                        width={cate.thumbnail.width}
+                        alt={cate.title}
+                      />
+                    </div>
+                  </div>
+                  <span className="select-none text-neutral-900 text-body-md md:text-body-lg xl:text-body-xl font-medium xl:font-semibold whitespace-nowrap">
+                    {cate.title}
+                  </span>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        {/* <div
           className="container-cs px-4 overflow-x-auto flex gap-x-5 pt-10 pb-[56px] md:gap-[27.2px] md:pt-[72px] md:pb-[64px] md:px-0 xl:gap-[64px] xl:pt-[48px] xl:pb-[112px]"
           style={{ scrollbarWidth: "none", scrollBehavior: "auto", overscrollBehaviorX: "none" }}
-        >
-          {plantCategories.map((cate) => (
-            <div key={cate.title} className="flex flex-col gap-2 items-center xl:gap-y-5">
-              <div className="h-[76px] w-[76px] md:w-[93px] md:h-[93px] xl:h-[160px] xl:w-[160px] bg-white-cs rounded-t-full pt-[13px] pb-[6px] px-[10px] md:pt-[16.27px] md:px-[11.62px] md:pb-[6.98px] xl:pt-[28px] xl:px-5 xl:pb-3">
-                <div className="h-[57px] w-[57px] md:w-[69.75px] md:h-[69.75px] xl:w-[120px] xl:h-[120px]">
-                  <Image
-                    src={cate.thumbnail.src}
-                    height={cate.thumbnail.height}
-                    width={cate.thumbnail.width}
-                    alt={cate.title}
-                  />
-                </div>
-              </div>
-              <span className="text-neutral-900 text-body-md md:text-body-lg xl:text-body-xl font-medium xl:font-semibold whitespace-nowrap">
-                {cate.title}
-              </span>
-            </div>
-          ))}
-        </div>
+        ></div> */}
       </section>
     </main>
   );
