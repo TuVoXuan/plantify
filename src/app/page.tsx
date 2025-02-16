@@ -1,3 +1,4 @@
+"use client";
 import bannerBg from "../assets/images/BannerBg.png";
 import bannerImage from "../assets/images/BannerImage.png";
 import Image from "next/image";
@@ -8,6 +9,9 @@ import floweringPlants from "../assets/images/FloweringPlants.png";
 import foliagePlants from "../assets/images/FoliagePlants.png";
 import herbsPlants from "../assets/images/HerbsPlants.png";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { useState } from "react";
+import CategoryTag from "@/components/category-tag";
+import ProductCard from "@/components/product-card";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -18,7 +22,11 @@ const plantCategories = [
   { thumbnail: herbsPlants, title: "Herbs Plants" },
 ];
 
+const categoryTags = ["Weeping Fig", "Rubber Plant", "Parlor Palm", "Dragon Tree", "Lemon Lime"];
+
 export default function Home() {
+  const [activeCategoryTag, setActiveCategoryTag] = useState<string>("Weeping Fig");
+
   return (
     <main className="bg-neutral-50">
       {/* Banner */}
@@ -71,10 +79,32 @@ export default function Home() {
             ))}
           </CarouselContent>
         </Carousel>
-        {/* <div
-          className="container-cs px-4 overflow-x-auto flex gap-x-5 pt-10 pb-[56px] md:gap-[27.2px] md:pt-[72px] md:pb-[64px] md:px-0 xl:gap-[64px] xl:pt-[48px] xl:pb-[112px]"
-          style={{ scrollbarWidth: "none", scrollBehavior: "auto", overscrollBehaviorX: "none" }}
-        ></div> */}
+      </section>
+      {/* Most Popular Product */}
+      <section>
+        <div className="container-cs px-4 mb-6 md:flex md:flex-col md: items-center md:mb-8 xl:mb-[48px]">
+          <h1 className="text-desktop-h5 text-center text-neutral-900 mb-4 md:text-desktop-h4 md:mb-5 xl:text-desktop-h1 xl:mb-10">
+            Most Popular Product
+          </h1>
+
+          <div className="flex gap-x-2 overflow-x-auto xl:gap-x-3" style={{ scrollbarWidth: "none" }}>
+            {categoryTags.map((cate) => (
+              <CategoryTag
+                className="shrink-0"
+                title={cate}
+                key={cate}
+                isActive={activeCategoryTag === cate}
+                onClick={() => setActiveCategoryTag(cate)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="container-cs grid grid-cols-2 gap-x-[11px] gap-y-3 px-4 pb-[64px] md:grid-cols-4 md:gap-x-[18px] md:gap-y-5 md:px-0 xl:gap-x-6 xl:gap-y-8">
+          {new Array(8).fill(0).map((_item, index) => (
+            <ProductCard key={index} tagLabel="NEW" tagType="new" />
+          ))}
+        </div>
       </section>
     </main>
   );
