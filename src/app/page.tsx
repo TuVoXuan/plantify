@@ -12,6 +12,12 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { useState } from "react";
 import CategoryTag from "@/components/category-tag";
 import ProductCard from "@/components/product-card";
+import tree1 from "../assets/images/Tree1.png";
+import tree2 from "../assets/images/Tree2.png";
+import tree3 from "../assets/images/Tree3.png";
+import tree4 from "../assets/images/Tree4.png";
+import tree5 from "../assets/images/Tree5.png";
+import tree6 from "../assets/images/Tree6.png";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -23,6 +29,64 @@ const plantCategories = [
 ];
 
 const categoryTags = ["Weeping Fig", "Rubber Plant", "Parlor Palm", "Dragon Tree", "Lemon Lime"];
+
+const mostPopularTree = [
+  {
+    thumbnail: tree1.src,
+    name: "Petlas MultiAction PT565",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree2.src,
+    name: "Tourador X ALL CLIMATE TF1",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree3.src,
+    name: "Kumho Solus 4S HA32",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree1.src,
+    name: "Petlas MultiAction PT565",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree4.src,
+    name: "Vineyard Reach",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree5.src,
+    name: "Maxtrek Relamax 4seasons",
+    originalPrice: 25,
+    discountPrice: 20,
+  },
+  {
+    thumbnail: tree3.src,
+    name: "Hankook Kinergy 4S 2 (H750)",
+    originalPrice: 25,
+    discountPrice: 20,
+    discount: 50,
+  },
+  {
+    thumbnail: tree6.src,
+    name: "Petlas MultiAction PT565",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+];
 
 export default function Home() {
   const [activeCategoryTag, setActiveCategoryTag] = useState<string>("Weeping Fig");
@@ -101,8 +165,16 @@ export default function Home() {
         </div>
 
         <div className="container-cs grid grid-cols-2 gap-x-[11px] gap-y-3 px-4 pb-[64px] md:grid-cols-4 md:gap-x-[18px] md:gap-y-5 md:px-0 xl:gap-x-6 xl:gap-y-8">
-          {new Array(8).fill(0).map((_item, index) => (
-            <ProductCard key={index} tagLabel="NEW" tagType="new" />
+          {mostPopularTree.map((tree, index) => (
+            <ProductCard
+              key={index}
+              name={tree.name}
+              thumbnail={tree.thumbnail}
+              originalPrice={tree.originalPrice}
+              discountPrice={tree.discountPrice}
+              tagType={tree.isNew ? "new" : tree.discount ? "discount" : undefined}
+              tagLabel={tree.isNew ? "NEW" : tree.discount ? `-${tree.discount}%` : undefined}
+            />
           ))}
         </div>
       </section>

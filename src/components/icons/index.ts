@@ -1,5 +1,6 @@
 import Close from "./Close";
 import Envelop from "./Envelop";
+import Eye from "./Eye";
 import Facebook from "./Facebook";
 import Heart from "./Heart";
 import Instagram from "./Instagram";
@@ -20,6 +21,7 @@ const Icons = {
   Instagram,
   Twitter,
   Envelop,
+  Eye,
 };
 
 export default Icons;
