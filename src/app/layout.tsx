@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(dmSerifDisplay.variable, oneset.variable, "2xl:max-w-[1440px] 2xl:mx-auto")}>
+      <body className={cn(dmSerifDisplay.variable, oneset.variable, "relative 2xl:max-w-[1440px] 2xl:mx-auto")}>
         <Header />
         {children}
         <Footer />
