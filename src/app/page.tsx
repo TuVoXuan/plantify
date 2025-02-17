@@ -18,6 +18,8 @@ import tree3 from "../assets/images/Tree3.png";
 import tree4 from "../assets/images/Tree4.png";
 import tree5 from "../assets/images/Tree5.png";
 import tree6 from "../assets/images/Tree6.png";
+import Rectangle74 from "../assets/images/Rectangle3074.png";
+import Rectangle75 from "../assets/images/Rectangle3075.png";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -176,6 +178,58 @@ export default function Home() {
               tagLabel={tree.isNew ? "NEW" : tree.discount ? `-${tree.discount}%` : undefined}
             />
           ))}
+        </div>
+      </section>
+      {/* shop now */}
+      <section>
+        <div className="p-4">
+          <div className="grid gap-10 md:grid-cols-2">
+            {/* Phần 1 */}
+            <div>
+              <div className="ml-auto xl:ml-0 mb-6">
+                <Image
+                  src={Rectangle75}
+                  height={568}
+                  width={683}
+                  alt="banner image"
+                  className="w-full h-auto md:w-[421px] md:h-[334px] xl:w-[683px] xl:h-auto"
+                />
+              </div>
+              <h2 className="text-[#0F172A] text-desktop-h5 text-center">Plant for Office</h2>
+              <p className="text-body-sm text-[#64748B] text-center md:text-left mb-5 mt-3">
+                Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
+                aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
+              </p>
+              <div className="text-center">
+                <button className="py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:px-[30.5px] xl:py-3 mx-auto">
+                  <span className="text-body-lg font-medium text-white-cs">Shop Now</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Phần 2 */}
+            <div>
+              <div className="ml-auto xl:ml-0 mb-6">
+                <Image
+                  src={Rectangle74}
+                  height={568}
+                  width={683}
+                  alt="banner image"
+                  className="w-full h-auto md:w-[421px] md:h-[334px] xl:w-[683px] xl:h-auto"
+                />
+              </div>
+              <h2 className="text-[#0F172A] text-desktop-h5 text-center">Plant for Your Home</h2>
+              <p className="text-body-sm text-[#64748B] text-center md:text-left mb-5 mt-3">
+                Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
+                aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
+              </p>
+              <div className="text-center">
+                <button className="py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:px-[30.5px] xl:py-3 mx-auto">
+                  <span className="text-body-lg font-medium text-white-cs">Shop Now</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
