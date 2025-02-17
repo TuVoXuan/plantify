@@ -18,6 +18,12 @@ import tree3 from "../assets/images/Tree3.png";
 import tree4 from "../assets/images/Tree4.png";
 import tree5 from "../assets/images/Tree5.png";
 import tree6 from "../assets/images/Tree6.png";
+import { Star } from "lucide-react";
+import person1 from "../assets/images/avatar1.jpg";
+import person2 from "../assets/images/avatar2.jpg";
+import person3 from "../assets/images/avatar3.jpg";
+import person4 from "../assets/images/avatar4.jpg";
+import person5 from "../assets/images/avatar5.jpg";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -87,6 +93,43 @@ const mostPopularTree = [
     isNew: true,
   },
 ];
+
+const reviews = [
+  {
+    rate: 5,
+    comment:
+      "Excellent experience! The service was top-notch, and I would highly recommend it to anyone looking for quality.",
+    avatar: person1.src,
+    name: "Mizanur Rahman",
+  },
+  {
+    rate: 4,
+    comment: "Very good overall. Some minor issues, but nothing that would stop me from coming back again!",
+    avatar: person2.src,
+    name: "Sophia Johnson",
+  },
+  {
+    rate: 5,
+    comment: "Average experience. It was okay, but I expected a bit more based on the reviews.",
+    avatar: person3.src,
+    name: "Ethan Williams",
+  },
+  {
+    rate: 5,
+    comment: "Absolutely fantastic! Everything exceeded my expectations, and I will definitely return.",
+    avatar: person4.src,
+    name: "Olivia Brown",
+  },
+  {
+    rate: 5,
+    comment: "Not the best experience. There were quite a few issues that need improvement.",
+    avatar: person5.src,
+    name: "Liam Miller",
+  },
+];
+
+const MAX_STAR_REVIEW = 5;
+const HARD_VALUE_ARRAY = 0;
 
 export default function Home() {
   const [activeCategoryTag, setActiveCategoryTag] = useState<string>("Weeping Fig");
@@ -176,6 +219,42 @@ export default function Home() {
               tagLabel={tree.isNew ? "NEW" : tree.discount ? `-${tree.discount}%` : undefined}
             />
           ))}
+        </div>
+      </section>
+
+      {/* What people says */}
+      <section className="bg-primary-50">
+        <div className="container-cs px-4 pt-[34px] pb-[74px]">
+          <h2 className="text-desktop-h5 text-neutral-900 text-center mb-3">What People Says</h2>
+          <p className="text-body-sm text-neutral-600 mb-6 text-center">
+            Gorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet
+          </p>
+
+          <Carousel>
+            <CarouselContent>
+              {reviews.map((review, index) => (
+                <CarouselItem key={index} className="basis-[90%]">
+                  <div className="bg-white-cs rounded-[4px] py-6 px-4">
+                    <div className="flex items-center gap-x-1 mb-2">
+                      {new Array(review.rate).fill(HARD_VALUE_ARRAY).map((_, index) => (
+                        <Star key={index} className="h-3 w-3 stroke-[#FF9900] fill-[#FF9900]" />
+                      ))}
+                      {new Array(MAX_STAR_REVIEW - review.rate).fill(HARD_VALUE_ARRAY).map((_, index) => (
+                        <Star key={index} className="h-3 w-3" />
+                      ))}
+                    </div>
+                    <p className="text-body-md text-neutral-600 mb-2">{review.comment}</p>
+                    <div className="flex items-center gap-2">
+                      <div className="relative h-10 w-10 overflow-hidden rounded-full">
+                        <Image src={review.avatar} fill alt={review.name} className="object-cover" />
+                      </div>
+                      <p className="text-body-lg font-medium text-neutral-900">{review.name}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
     </main>
