@@ -90,6 +90,23 @@ const mostPopularTree = [
   },
 ];
 
+const plantData = [
+  {
+    imageSrc: Rectangle75,
+    title: "Plant for Office",
+    description:
+      "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.",
+    reverse: false,
+  },
+  {
+    imageSrc: Rectangle74,
+    title: "Plant for Your Home",
+    description:
+      "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.",
+    reverse: true,
+  },
+];
+
 export default function Home() {
   const [activeCategoryTag, setActiveCategoryTag] = useState<string>("Weeping Fig");
 
@@ -182,54 +199,37 @@ export default function Home() {
       </section>
       {/* shop now */}
       <section>
-        <div className="p-4">
-          <div className="grid gap-10 md:grid-cols-2">
-            {/* Phần 1 */}
-            <div>
-              <div className="ml-auto xl:ml-0 mb-6">
+        <div className="container-cs px-4 sm:px-12 mb-6 md:flex md:flex-col md:items-center md:mb-8 xl:mb-[48px] gap-12 md:gap-[56px] flex flex-col ">
+          {plantData.map((plant, index) => (
+            <div
+              key={index}
+              className={`flex flex-col md:flex-row ${plant.reverse ? "md:flex-row-reverse" : ""} items-center gap-5 md:gap-12`}
+            >
+              <div className="w-full md:w-1/2">
                 <Image
-                  src={Rectangle75}
+                  src={plant.imageSrc}
                   height={568}
                   width={683}
                   alt="banner image"
-                  className="w-full h-auto md:w-[421px] md:h-[334px] xl:w-[683px] xl:h-auto"
+                  className="w-[361px] h-[319px] sm:w-[342px] sm:h-[302px] lg:w-[590px] lg:h-[521px] mx-auto"
                 />
               </div>
-              <h2 className="text-[#0F172A] text-desktop-h5 text-center">Plant for Office</h2>
-              <p className="text-body-sm text-[#64748B] text-center md:text-left mb-5 mt-3">
-                Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
-                aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
-              </p>
-              <div className="text-center">
-                <button className="py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:px-[30.5px] xl:py-3 mx-auto">
-                  <span className="text-body-lg font-medium text-white-cs">Shop Now</span>
-                </button>
-              </div>
-            </div>
 
-            {/* Phần 2 */}
-            <div>
-              <div className="ml-auto xl:ml-0 mb-6">
-                <Image
-                  src={Rectangle74}
-                  height={568}
-                  width={683}
-                  alt="banner image"
-                  className="w-full h-auto md:w-[421px] md:h-[334px] xl:w-[683px] xl:h-auto"
-                />
-              </div>
-              <h2 className="text-[#0F172A] text-desktop-h5 text-center">Plant for Your Home</h2>
-              <p className="text-body-sm text-[#64748B] text-center md:text-left mb-5 mt-3">
-                Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
-                aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
-              </p>
-              <div className="text-center">
-                <button className="py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:px-[30.5px] xl:py-3 mx-auto">
-                  <span className="text-body-lg font-medium text-white-cs">Shop Now</span>
-                </button>
+              <div className="w-full md:w-1/2 flex flex-col justify-center">
+                <h2 className="text-[#0F172A] text-desktop-h5 sm:text-desktop-h4 text-center md:text-left">
+                  {plant.title}
+                </h2>
+                <p className="text-body-sm sm:text-body-md text-[#64748B] text-center md:text-left mb-5 mt-3">
+                  {plant.description}
+                </p>
+                <div className="text-center md:text-left">
+                  <button className="py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:px-[30.5px] xl:py-3">
+                    <span className="text-body-lg font-medium text-white-cs">Shop Now</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
     </main>
