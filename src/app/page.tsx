@@ -8,7 +8,7 @@ import carnivorous from "../assets/images/Carnivorous.png";
 import floweringPlants from "../assets/images/FloweringPlants.png";
 import foliagePlants from "../assets/images/FoliagePlants.png";
 import herbsPlants from "../assets/images/HerbsPlants.png";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, useDotButton } from "@/components/ui/carousel";
 import { useState } from "react";
 import CategoryTag from "@/components/category-tag";
 import ProductCard from "@/components/product-card";
@@ -24,6 +24,7 @@ import person2 from "../assets/images/avatar2.jpg";
 import person3 from "../assets/images/avatar3.jpg";
 import person4 from "../assets/images/avatar4.jpg";
 import person5 from "../assets/images/avatar5.jpg";
+import { cn } from "@/lib/utils";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -133,6 +134,8 @@ const HARD_VALUE_ARRAY = 0;
 
 export default function Home() {
   const [activeCategoryTag, setActiveCategoryTag] = useState<string>("Weeping Fig");
+  const [whatTheySayCarousel, setWhatTheySayCarousel] = useState<CarouselApi>();
+  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(whatTheySayCarousel);
 
   return (
     <main className="bg-neutral-50">
@@ -224,28 +227,32 @@ export default function Home() {
 
       {/* What people says */}
       <section className="bg-primary-50">
-        <div className="container-cs px-4 pt-[34px] pb-[74px]">
-          <h2 className="text-desktop-h5 text-neutral-900 text-center mb-3">What People Says</h2>
-          <p className="text-body-sm text-neutral-600 mb-6 text-center">
+        <div className="container-cs px-4 py-[34px] md:py-[48px] md:px-0">
+          <h2 className="text-desktop-h5 md:text-desktop-h4 xl:text-desktop-h1 text-neutral-900 text-center mb-3 md:mb-4 xl:mn-5">
+            What People Says
+          </h2>
+          <p className="text-body-sm text-neutral-600 mb-6 text-center md:text-body-md md:mb-8 xl:text-body-xl xl:mb-[48px]">
             Gorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet
           </p>
 
-          <Carousel>
+          <Carousel setApi={setWhatTheySayCarousel}>
             <CarouselContent>
               {reviews.map((review, index) => (
-                <CarouselItem key={index} className="basis-[90%]">
-                  <div className="bg-white-cs rounded-[4px] py-6 px-4">
-                    <div className="flex items-center gap-x-1 mb-2">
+                <CarouselItem key={index} className="basis-[90%] md:basis-auto">
+                  <div className="bg-white-cs rounded-[4px] py-6 px-4 md:w-[340px] md:h-[168px] xl:rounded-[8px] xl:w-[410px] xl:h-[191px] xl:py-4 xl:px-5">
+                    <div className="flex items-center gap-x-1 mb-2 md:mb-3 xl:gap-x-[5px] xl:mb-4">
                       {new Array(review.rate).fill(HARD_VALUE_ARRAY).map((_, index) => (
-                        <Star key={index} className="h-3 w-3 stroke-[#FF9900] fill-[#FF9900]" />
+                        <Star key={index} className="h-3 w-3 xl:h-[14px] xl:w-[14px] stroke-[#FF9900] fill-[#FF9900]" />
                       ))}
                       {new Array(MAX_STAR_REVIEW - review.rate).fill(HARD_VALUE_ARRAY).map((_, index) => (
-                        <Star key={index} className="h-3 w-3" />
+                        <Star key={index} className="h-3 w-3 xl:h-[14px] xl:w-[14px]" />
                       ))}
                     </div>
-                    <p className="text-body-md text-neutral-600 mb-2">{review.comment}</p>
+                    <p className="text-body-md text-neutral-600 mb-2 md:mb-3 xl:text-body-lg xl:mb-4">
+                      {review.comment}
+                    </p>
                     <div className="flex items-center gap-2">
-                      <div className="relative h-10 w-10 overflow-hidden rounded-full">
+                      <div className="relative h-6 w-6 xl:h-10 xl:w-10 overflow-hidden rounded-full">
                         <Image src={review.avatar} fill alt={review.name} className="object-cover" />
                       </div>
                       <p className="text-body-lg font-medium text-neutral-900">{review.name}</p>
@@ -255,6 +262,20 @@ export default function Home() {
               ))}
             </CarouselContent>
           </Carousel>
+
+          <div className="flex items-center gap-x-2 w-full justify-center mt-6 md:mt-8 xl:mt-[48px] xl:gap-x-[13px]">
+            {scrollSnaps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={cn(
+                  index === selectedIndex
+                    ? 'h-4 w-4 xl:h-[25px] xl:w-[25px] relative rounded-full border-[1px] border-primary-300 bg-transparent before:content[""] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:h-[7px] before:w-[7px] xl:before:h-[11px] xl:before:w-[11px] before:bg-primary-500 before:rounded-full'
+                    : "h-2 w-2 xl:h-[11px] xl:w-[11px] bg-primary-200 rounded-full",
+                )}
+              ></button>
+            ))}
+          </div>
         </div>
       </section>
     </main>

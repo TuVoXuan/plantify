@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
+import { EmblaCarouselType } from "embla-carousel";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -223,4 +224,45 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = "CarouselNext";
 
-export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+type UseDotButtonType = {
+  selectedIndex: number;
+  scrollSnaps: number[];
+  onDotButtonClick: (index: number) => void;
+};
+
+const useDotButton = (carouselApi: EmblaCarouselType | undefined): UseDotButtonType => {
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+
+  const onDotButtonClick = React.useCallback(
+    (index: number) => {
+      if (!carouselApi) return;
+      carouselApi.scrollTo(index);
+    },
+    [carouselApi],
+  );
+
+  const onInit = React.useCallback((carouselApi: EmblaCarouselType) => {
+    setScrollSnaps(carouselApi.scrollSnapList());
+  }, []);
+
+  const onSelect = React.useCallback((carouselApi: EmblaCarouselType) => {
+    setSelectedIndex(carouselApi.selectedScrollSnap());
+  }, []);
+
+  React.useEffect(() => {
+    if (!carouselApi) return;
+
+    onInit(carouselApi);
+    onSelect(carouselApi);
+    carouselApi.on("reInit", onInit).on("reInit", onSelect).on("select", onSelect);
+  }, [carouselApi, onInit, onSelect]);
+
+  return {
+    selectedIndex,
+    scrollSnaps,
+    onDotButtonClick,
+  };
+};
+
+export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, useDotButton };
