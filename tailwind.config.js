@@ -85,6 +85,7 @@ export const theme = {
     boxShadow: {
       cs: "0 4px 20px 0 rgba(0, 0, 0, 0.08)",
       "cs-1": "0 10px 14px -4px rgba(15, 28, 51, 0.08), 0 2px 8px -4px rgba(15, 28, 51, 0.05)",
+      "cs-2": "0 16px 20px -4px rgba(15, 28, 51, 0.1), 0 6px 8px -4px rgba(15, 28, 51, 0.04)",
     },
   },
   container: {

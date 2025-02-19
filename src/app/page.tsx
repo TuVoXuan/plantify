@@ -18,13 +18,16 @@ import tree3 from "../assets/images/Tree3.png";
 import tree4 from "../assets/images/Tree4.png";
 import tree5 from "../assets/images/Tree5.png";
 import tree6 from "../assets/images/Tree6.png";
-import { Star } from "lucide-react";
 import person1 from "../assets/images/avatar1.jpg";
 import person2 from "../assets/images/avatar2.jpg";
 import person3 from "../assets/images/avatar3.jpg";
 import person4 from "../assets/images/avatar4.jpg";
 import person5 from "../assets/images/avatar5.jpg";
+import blog1 from "../assets/images/blog1.png";
+import blog2 from "../assets/images/blog2.png";
+import blog3 from "../assets/images/blog3.png";
 import { cn } from "@/lib/utils";
+import { Star } from "lucide-react";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -126,6 +129,27 @@ const reviews = [
     comment: "Not the best experience. There were quite a few issues that need improvement.",
     avatar: person5.src,
     name: "Liam Miller",
+  },
+];
+
+const blogs = [
+  {
+    thumbnail: blog1.src,
+    title: "How to choose best plant for you that make your house better.",
+    author: "Akash Basak",
+    releaseDate: "10 june 2024",
+  },
+  {
+    thumbnail: blog2.src,
+    title: "How to choose best plant for you that make your house better.",
+    author: "Akash Basak",
+    releaseDate: "10 june 2024",
+  },
+  {
+    thumbnail: blog3.src,
+    title: "How to choose best plant for you that make your house better.",
+    author: "Akash Basak",
+    releaseDate: "10 june 2024",
   },
 ];
 
@@ -275,6 +299,49 @@ export default function Home() {
                 )}
               ></button>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* Read Our Recent Blogs */}
+      <section>
+        <div className="container-cs px-4 pt-[56px] pb-[64px] md:pt-[64px] md:px-0 xl:py-[120px]">
+          <h2 className="text-desktop-h5 md:text-desktop-h4 xl:text-desktop-h1 text-neutral-900 text-center mb-3 md:mb-4 xl:mn-5">
+            Read our recent Blogs
+          </h2>
+          <p className="text-body-sm text-neutral-600 mb-6 text-center md:text-body-md md:mb-8 xl:text-body-xl xl:mb-[48px]">
+            Gorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet
+          </p>
+
+          <div className="relative">
+            <Carousel>
+              <CarouselContent className="pb-[64px] md:pb-[72px] md:-ml-5 xl:pb-[96px] xl:-ml-[23.5px]">
+                {blogs.map((blog, index) => (
+                  <CarouselItem key={index} className="basis-auto md:basis-1/3 md:pl-5 xl:pl-[23.5px]">
+                    <div className="overflow-hidden w-[319px] rounded-[5.36px] bg-white md:w-auto md:rounded-[4px] xl:rounded-[8px] hover:shadow-cs-2">
+                      <div className="relative w-full h-[228px] md:h-[170px] xl:h-[294px]">
+                        <Image src={blog.thumbnail} alt={blog.title} fill className="object-cover object-center" />
+                      </div>
+                      <div className="pt-3 px-3 pb-4 md:pt-2 md:px-2 md:pb-3 xl:pt-3 xl:px-3 xl:pb-5">
+                        <p className="text-body-lg text-neutral-900 font-medium mb-2 md:text-body-md xl:text-body-xl xl:mb-3">
+                          How to choose best plant for you that make your house better.
+                        </p>
+                        <div className="flex items-center gap-x-3">
+                          <p className="text-body-sm text-neutral-600 xl:text-body-md">By {blog.author}</p>
+                          <div className="h-[11px] md:h-2 xl:h-[14px] w-[1px] bg-neutral-400"></div>
+                          <p className="text-body-sm text-neutral-600 xl:text-body-md">{blog.releaseDate}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            <div className="absolute flex w-full justify-center bottom-0">
+              <button className="text-body-lg font-medium text-white-cs py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:py-3 xl:px-[39px]">
+                Read More
+              </button>
+            </div>
           </div>
         </div>
       </section>
