@@ -200,16 +200,16 @@ export default function Home() {
       </section>
       {/* shop now */}
       <section>
-        <div className="container-cs px-4 sm:px-[72px] mb-[64px] md:flex md:flex-col md:items-center md:mb-[72px] xl:mb-[120px] gap-12 md:gap-[56px] flex flex-col ">
+        <div className="container-cs px-4 sm:px-[87px] xl:px-[62px] mb-[64px] md:flex md:flex-col md:items-center md:mb-[72px] xl:mb-[120px] gap-12 md:gap-[56px] flex flex-col ">
           {plantData.map((plant, index) => (
             <div
               key={index}
               className={cn(
-                "flex flex-col md:flex-row item-center gap-5 md:gap-12 ",
+                "flex flex-col md:flex-row item-center gap-5 sm:gap-12 ",
                 plant.reverse && "md:flex-row-reverse",
               )}
             >
-              <div className="w-full  md:w-[590px]  xl:w-[650px]">
+              <div className="w-full  sm:w-[395px]  xl:w-[650px]">
                 <Image
                   src={plant.imageSrc}
                   height={568}
@@ -220,10 +220,10 @@ export default function Home() {
               </div>
 
               <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <h2 className="text-neutral-900 text-desktop-h5 sm:text-desktop-h4 text-center md:text-left">
+                <h2 className="text-neutral-900 text-desktop-h5 sm:text-desktop-h4 xl:text-desktop-h1 text-center md:text-left">
                   {plant.title}
                 </h2>
-                <p className="text-body-sm sm:text-body-md text-[#64748B] text-center md:text-left mb-5 mt-3">
+                <p className="text-body-sm sm:text-body-md xl:text-body-lg text-[#64748B] text-center md:text-left mb-5 mt-3">
                   {plant.description}
                 </p>
                 <div className="text-center md:text-left">
