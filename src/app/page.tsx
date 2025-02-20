@@ -28,6 +28,7 @@ import blog2 from "../assets/images/blog2.png";
 import blog3 from "../assets/images/blog3.png";
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
+import Icons from "@/components/icons";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -341,6 +342,62 @@ export default function Home() {
               <button className="text-body-lg font-medium text-white-cs py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:py-3 xl:px-[39px]">
                 Read More
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Services */}
+      <section className="pb-20 md:pb-[88px] xl:pb-[140px]">
+        <div className="bg-primary-50">
+          <div
+            className={cn(
+              "container-cs py-4 px-[35.5px] grid grid-cols-2 gap-x-8 gap-y-5",
+              "md:flex md:justify-center md:gap-x-[24.33px] md:py-8 md:px-0 xl:py-[64px] xl:justify-between",
+            )}
+          >
+            <div className="flex items-center gap-x-2 xl:gap-x-4">
+              <Icons.Truck className="shrink-0 md:h-8 md:w-8 xl:h-[56px] xl:w-[56px]" />
+              <div>
+                <p className="text-body-sm md:text-body-lg xl:text-body-xl font-semibold text-neutral-900 mb-1 xl:mb-2">
+                  Free Shipping
+                </p>
+                <p className="text-body-xs md:text-body-sm xl:text-body-lg text-neutral-600 whitespace-nowrap">
+                  Free Shipping over $100
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-2 xl:gap-x-4">
+              <Icons.Return className="shrink-0 md:h-8 md:w-8 xl:h-[56px] xl:w-[56px]" />
+              <div>
+                <p className="text-body-sm md:text-body-lg xl:text-body-xl font-semibold text-neutral-900 mb-1 xl:mb-2">
+                  Easy Return
+                </p>
+                <p className="text-body-xs md:text-body-sm xl:text-body-lg text-neutral-600 whitespace-nowrap">
+                  Money Back Guaranty
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-2 xl:gap-x-4">
+              <Icons.SecurityPayment className="shrink-0 md:h-8 md:w-8 xl:h-[56px] xl:w-[56px]" />
+              <div>
+                <p className="text-body-sm md:text-body-lg xl:text-body-xl font-semibold text-neutral-900 mb-1 xl:mb-2">
+                  Secure Payment
+                </p>
+                <p className="text-body-xs md:text-body-sm xl:text-body-lg text-neutral-600 whitespace-nowrap">
+                  100% secure payment
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-x-2 xl:gap-x-4">
+              <Icons.Contact className="shrink-0 md:h-8 md:w-8 xl:h-[56px] xl:w-[56px]" />
+              <div>
+                <p className="text-body-sm md:text-body-lg xl:text-body-xl font-semibold text-neutral-900 mb-1 xl:mb-2">
+                  27/7 Support
+                </p>
+                <p className="text-body-xs md:text-body-sm xl:text-body-lg text-neutral-600 whitespace-nowrap">
+                  Support 24 hours a day
+                </p>
+              </div>
             </div>
           </div>
         </div>
