@@ -26,6 +26,8 @@ import person5 from "../assets/images/avatar5.jpg";
 import blog1 from "../assets/images/blog1.png";
 import blog2 from "../assets/images/blog2.png";
 import blog3 from "../assets/images/blog3.png";
+import plantForOffice from "../assets/images/PlantForOffice.avif";
+import plantForHome from "../assets/images/PlantForHome.avif";
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import Icons from "@/components/icons";
@@ -249,7 +251,48 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* Plan for Office and Home */}
+      <section>
+        <div className="container-cs px-4 flex flex-col gap-y-12 pb-16 md:gap-y-14 md:px-[47px] md:pb-[72px] xl:px-[72px] xl:gap-x-20 xl:pb-[120px]">
+          <div className="flex flex-col gap-y-5 md:flex-row md:items-center md:gap-x-12 xl:gap-x-20">
+            <div className="relative w-full h-[319px] md:h-[302px] xl:h-[521px]">
+              <Image src={plantForOffice.src} fill className="object-center object-cover" alt="plant for office" />
+            </div>
 
+            <div className="flex flex-col items-center md:w-[270px] md:items-start md:shrink-0 xl:w-[466px]">
+              <h3 className="text-desktop-h5 md:text-desktop-h4 xl:text-desktop-h1 text-neutral-900 mb-2 xl:mb-4">
+                Plant for Office
+              </h3>
+              <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-500 mb-5 md:mb-6 xl:mb-8">
+                Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
+                aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
+              </p>
+              <button className="text-body-lg font-medium text-white bg-primary-500 hover:bg-primary-400 rounded-[4px] py-2 px-6 xl:py-3 xl:px-[30.5px]">
+                Shop Now
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-y-5 md:flex-row-reverse md:items-center md:gap-x-12 xl:gap-x-20">
+            <div className="relative w-full h-[319px] md:h-[302px] xl:h-[521px]">
+              <Image src={plantForHome.src} fill className="object-center object-cover" alt="plant for office" />
+            </div>
+
+            <div className="flex flex-col items-center md:w-[270px] md:items-start md:shrink-0 xl:w-[466px]">
+              <h3 className="text-desktop-h5 md:text-desktop-h4 xl:text-desktop-h1 text-neutral-900 mb-2 xl:mb-4">
+                Plant for Your Office
+              </h3>
+              <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-500 mb-5 md:mb-6 xl:mb-8">
+                Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
+                aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
+              </p>
+              <button className="text-body-lg font-medium text-white bg-primary-500 hover:bg-primary-400 rounded-[4px] py-2 px-6 xl:py-3 xl:px-[30.5px]">
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* What people says */}
       <section className="bg-primary-50">
         <div className="container-cs px-4 py-[34px] md:py-[48px] md:px-0">
