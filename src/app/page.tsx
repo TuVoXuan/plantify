@@ -26,11 +26,12 @@ import person5 from "../assets/images/avatar5.jpg";
 import blog1 from "../assets/images/blog1.png";
 import blog2 from "../assets/images/blog2.png";
 import blog3 from "../assets/images/blog3.png";
-import plantForOffice from "../assets/images/PlantForOffice.avif";
-import plantForHome from "../assets/images/PlantForHome.avif";
+import plantForOffice from "../assets/images/PlantForOffice.png";
+import plantForHome from "../assets/images/PlantForHome.png";
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import Icons from "@/components/icons";
+import { useRouter } from "next/navigation";
 
 const plantCategories = [
   { thumbnail: succulents, title: "Succulents" },
@@ -164,6 +165,12 @@ export default function Home() {
   const [whatTheySayCarousel, setWhatTheySayCarousel] = useState<CarouselApi>();
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(whatTheySayCarousel);
 
+  const router = useRouter();
+
+  const handleGoShop = () => {
+    router.push("/shop");
+  };
+
   return (
     <main className="bg-neutral-50">
       {/* Banner */}
@@ -176,7 +183,10 @@ export default function Home() {
             <p className="text-body-md text-neutral-600 text-center mb-6 md:text-left xl:text-body-xl xl:mb-10">
               Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.
             </p>
-            <button className="py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:px-[30.5px] xl:py-3">
+            <button
+              onClick={handleGoShop}
+              className="py-2 px-6 rounded-[4px] bg-primary-500 hover:bg-primary-400 xl:px-[30.5px] xl:py-3"
+            >
               <span className="text-body-lg font-medium text-white-cs">Shop Now</span>
             </button>
           </div>
@@ -267,7 +277,10 @@ export default function Home() {
                 Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
                 aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
               </p>
-              <button className="text-body-lg font-medium text-white bg-primary-500 hover:bg-primary-400 rounded-[4px] py-2 px-6 xl:py-3 xl:px-[30.5px]">
+              <button
+                onClick={handleGoShop}
+                className="text-body-lg font-medium text-white bg-primary-500 hover:bg-primary-400 rounded-[4px] py-2 px-6 xl:py-3 xl:px-[30.5px]"
+              >
                 Shop Now
               </button>
             </div>
@@ -286,7 +299,10 @@ export default function Home() {
                 Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
                 aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per.
               </p>
-              <button className="text-body-lg font-medium text-white bg-primary-500 hover:bg-primary-400 rounded-[4px] py-2 px-6 xl:py-3 xl:px-[30.5px]">
+              <button
+                onClick={handleGoShop}
+                className="text-body-lg font-medium text-white bg-primary-500 hover:bg-primary-400 rounded-[4px] py-2 px-6 xl:py-3 xl:px-[30.5px]"
+              >
                 Shop Now
               </button>
             </div>
