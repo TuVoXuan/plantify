@@ -62,7 +62,7 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href={"/"}
+            href={"/shop"}
             className="font-medium md:text-body-md xl:text-body-lg text-neutral-900 px-2 py-1 xl:px-3 xl:py-2"
           >
             Shop

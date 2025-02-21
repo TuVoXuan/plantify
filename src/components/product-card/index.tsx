@@ -50,7 +50,7 @@ export default function ProductCard({
       )}
       <div className="h-[175px] xl:h-[302px] bg-white pb-[21px] pt-[39px] mb-3 xl:pt-[66.62px] xl:pb-[35.53px] xl:mb-4">
         <div className="relative w-full h-full">
-          <Image src={thumbnail} alt={name} fill className="object-contain" />
+          <Image src={thumbnail} alt={name} fill sizes="100%" className="object-contain" />
         </div>
       </div>
       <div>

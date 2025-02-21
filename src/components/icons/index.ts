@@ -1,8 +1,10 @@
+import ChevronUp from "./ChervonUp";
 import Close from "./Close";
 import Contact from "./Contact";
 import Envelop from "./Envelop";
 import Eye from "./Eye";
 import Facebook from "./Facebook";
+import Filter from "./Filter";
 import Heart from "./Heart";
 import Instagram from "./Instagram";
 import Menu from "./Menu";
@@ -30,6 +32,8 @@ const Icons = {
   Return,
   SecurityPayment,
   Contact,
+  Filter,
+  ChevronUp,
 };
 
 export default Icons;
