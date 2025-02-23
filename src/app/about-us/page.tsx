@@ -6,6 +6,9 @@ import { Carousel, CarouselApi, CarouselContent, CarouselItem, useDotButton } fr
 import { useState } from "react";
 
 import Checked from "../../assets/images/30-Checked.png";
+import facebook from "../../assets/images/Facebook.png";
+import instagram from "../../assets/images/Instagram.png";
+import twitter from "../../assets/images/Twitter.png";
 
 import person1 from "../../assets/images/avatar1.jpg";
 import person2 from "../../assets/images/avatar2.jpg";
@@ -70,13 +73,11 @@ export default function Home() {
     <main className="bg-neutral-50 pt-[98px]">
       {/* Plan for Office and Home */}
       <section>
-        <div className="container-cs px-4 flex flex-col gap-y-12 pb-12 md:gap-y-14 md:px-[47px] md:pb-[72px] xl:px-[72px] xl:gap-x-20 xl:pb-[120px]">
+        <div className="container-cs px-4 flex flex-col gap-y-12 pb-12 md:gap-y-14  xl:gap-y-[120px] md:pb-[72px]  xl:gap-x-20 xl:pb-[120px]">
           <div className="flex flex-col gap-y-5 md:flex-row md:items-center md:gap-x-12 xl:gap-x-20">
             <div className="flex flex-col items-center md:w-[270px] md:items-start md:shrink-0 xl:w-[466px]">
-              <h3 className="text-body-md md:text-desktop-h4 xl:text-desktop-h1 text-primary-500 mb-2 xl:mb-4 ">
-                Our Story
-              </h3>
-              <p className="whitespace-nowrap text-desktop-h6 md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-900 ">
+              <h3 className="text-body-md  xl:text-body-xl text-primary-500 mb-2 xl:mb-4 ">Our Story</h3>
+              <p className=" text-desktop-h6 md:text-desktop-h5 xl:text-desktop-h1 text-center md:text-left text-neutral-900 ">
                 We provide the best quality Plants in Bangladesh!
               </p>
               <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-500 my-3 md:mb-6 xl:mb-8">
@@ -84,47 +85,50 @@ export default function Home() {
                 ensembles and sarees. At Iconic Style, we believe that fashion is a
               </p>
               <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-0.5">
-                  <div className="w-4 h-4 relative">
+                <div className="flex items-center gap-0.5 xl:gap-2">
+                  <div className="w-4 h-4 xl:w-6 xl:h-6 relative">
                     <Image src={Checked} alt="checked" layout="fill" objectFit="contain" />
                   </div>
-                  <p className="text-body-md text-neutral-900">100% Customer Satisfaction</p>
+                  <p className="text-body-md text-neutral-900 xl:text-body-xl">100% Customer Satisfaction</p>
                 </div>
 
-                <div className="flex items-center gap-0.5">
-                  <div className="w-4 h-4 relative">
+                <div className="flex items-center gap-0.5 xl:gap-2">
+                  <div className="w-4 h-4  xl:w-6 xl:h-6 relative">
                     <Image src={Checked} alt="checked" layout="fill" objectFit="contain" />
                   </div>
-                  <p className="text-body-md text-neutral-900">Variety of collections</p>
+                  <p className="text-body-md text-neutral-900 xl:text-body-xl">Variety of collections</p>
                 </div>
 
-                <div className="flex items-center gap-0.5">
-                  <div className="w-4 h-4 relative">
+                <div className="flex items-center gap-0.5 xl:gap-2">
+                  <div className="w-4 h-4 xl:w-6 xl:h-6 relative">
                     <Image src={Checked} alt="checked" layout="fill" objectFit="contain" />
                   </div>
-                  <p className="text-body-md text-neutral-900">Fresh in quality</p>
+                  <p className="text-body-md text-neutral-900 xl:text-body-xl">Fresh in quality</p>
                 </div>
               </div>
             </div>
-            <div className="relative w-full h-[217px] md:h-[302px] xl:h-[521px]">
+            <div className="relative w-full h-[217px] md:h-[217px] xl:h-[367px]">
               <Image src={plantForOffice.src} fill className="object-center object-cover" alt="plant for office" />
             </div>
           </div>
 
           <div className="flex flex-col gap-y-5 md:flex-row-reverse md:items-center md:gap-x-12 xl:gap-x-20">
             <div className="flex flex-col items-center md:w-[270px] md:items-start md:shrink-0 xl:w-[466px]">
-              <h3 className="text-body-md md:text-desktop-h4 xl:text-desktop-h1 text-primary-500 mb-2 xl:mb-4 ">
-                Story of CEO
-              </h3>
-              <p className=" text-desktop-h6 md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-900 ">
+              <h3 className="text-body-md  xl:text-body-xl  text-primary-500 mb-2 xl:mb-4 ">Story of CEO</h3>
+              <p className=" text-desktop-h6 md:text-desktop-h5 xl:text-desktop-h1 text-center md:text-left text-neutral-900 ">
                 A Journey through the plants to the Natural beauty.
               </p>
               <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-500 my-3 md:mb-6 xl:mb-8">
                 Welcome to Iconic Style, your premier destination for exquisite fashion products including three-piece
                 ensembles and sarees. At Iconic Style, we believe that fashion is a r exquisite fashion products
               </p>
+              <div className="flex gap-2">
+                <Image src={facebook} alt="Facebook" width={20} height={20} className="w-5 h-5 xl:w-8 xl:h-8" />
+                <Image src={instagram} alt="Instagram" width={20} height={20} className="w-5 h-5 xl:w-8 xl:h-8" />
+                <Image src={twitter} alt="Twitter" width={20} height={20} className="w-5 h-5 xl:w-8 xl:h-8" />
+              </div>
             </div>
-            <div className="relative w-full h-[217px] md:h-[302px] xl:h-[521px]">
+            <div className="relative w-full h-[217px] md:h-[230px] xl:h-[388px]">
               <Image src={plantForHome.src} fill className="object-center object-cover" alt="plant for office" />
             </div>
           </div>
@@ -133,11 +137,14 @@ export default function Home() {
       {/* statistics */}
       <section>
         <div className="flex justify-center m-0 p-0">
-          <div className="w-full grid grid-cols-2 gap-6 bg-primary-700 py-[24px] px-[35px]">
+          <div className="w-full grid grid-cols-2 gap-6 xl:gap-8 bg-primary-700 py-[24px] px-[35px] md:py-[48px] xl:py-[80px] md:flex md:justify-center">
             {stats.map((stat, index) => (
-              <div key={index} className="h-[84px] bg-white rounded-lg flex flex-col items-center justify-center p-2">
-                <p className="text-neutral-900 text-desktop-h5">{stat.value}</p>
-                <p className="text-neutral-600 text-body-md whitespace-nowrap">{stat.label}</p>
+              <div
+                key={index}
+                className="xl:w-[202px] h-[84px] xl:h-[150px] bg-white rounded-lg flex flex-col items-center justify-center p-2 xl:p-6"
+              >
+                <p className="text-neutral-900 text-desktop-h5 xl:text-desktop-h2">{stat.value}</p>
+                <p className="text-neutral-600 text-body-md xl:text-body-xl whitespace-nowrap">{stat.label}</p>
               </div>
             ))}
           </div>
