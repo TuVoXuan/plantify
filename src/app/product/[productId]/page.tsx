@@ -148,8 +148,8 @@ export default function ProductDetailsPage() {
       </section>
 
       <section>
-        <div className="container-cs px-4">
-          <Tabs defaultValue="account">
+        <div className="container-cs px-4 pb-16">
+          <Tabs defaultValue="productDescription">
             <TabsList className="gap-x-16">
               <TabsTrigger
                 value="productDescription"
@@ -164,8 +164,57 @@ export default function ProductDetailsPage() {
                 REVIEW
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="productDescription">Make changes to your account here.</TabsContent>
-            <TabsContent value="review">Change your password here.</TabsContent>
+            <TabsContent value="productDescription" className="px-4 mt-5">
+              <ul className="list-disc space-y-2">
+                <li className="text-body-md text-neutral-600">
+                  Shipping & Import Fees Deposit to Bangladesh Details vailable at a lower price from other
+                </li>
+                <li className="text-body-md text-neutral-600">Sellers that may not offer free Prime shipping.</li>
+                <li className="text-body-md text-neutral-600">Case: Polished Gold-tone steel + black top ring</li>
+                <li className="text-body-md text-neutral-600">Strap: Black silicone with buckle closure</li>
+                <li className="text-body-md text-neutral-600">Strap Length: 190mm</li>
+                <li className="text-body-md text-neutral-600">Dial Features: Day, date & 24 hr int'l time display</li>
+                <li className="text-body-md text-neutral-600">Dial Features: Day, date & 24 hr int'l time display</li>
+                <li className="text-body-md text-neutral-600">Dial Color: Black</li>
+              </ul>
+            </TabsContent>
+            <TabsContent value="review" className="mt-5">
+              <div className="bg-white-cs rounded-[4px] py-2 px-4 flex gap-x-4">
+                <div className="flex flex-col justify-center items-center pr-6 relative after:content[''] after:absolute after:right-0 after:h-full after:w-[1px] after:bg-neutral-200">
+                  <p className="text-body-xl font-semibold text-neutral-900">4.8</p>
+                  <div className="flex items-center gap-x-[2px] mb-1">
+                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
+                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
+                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
+                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
+                    <Star className="h-4 w-4 stroke-neutral-400 fill-neutral-400" />
+                  </div>
+                  <p className="text-body-sm text-neutral-600">54 reviews</p>
+                </div>
+                <div className="flex-1 space-y-[2px] pb-[7px]">
+                  <div className="flex items-center gap-x-1">
+                    <span className="w-4 shrink-0 text-body-sm">5</span>
+                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[80%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  </div>
+                  <div className="flex items-center gap-x-1">
+                    <span className="w-4 shrink-0 text-body-sm">4</span>
+                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[60%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  </div>
+                  <div className="flex items-center gap-x-1">
+                    <span className="w-4 shrink-0 text-body-sm">3</span>
+                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[50%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  </div>
+                  <div className="flex items-center gap-x-1">
+                    <span className="w-4 shrink-0 text-body-sm">2</span>
+                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[30%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  </div>
+                  <div className="flex items-center gap-x-1">
+                    <span className="w-4 shrink-0 text-body-sm">1</span>
+                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[10%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
           </Tabs>
         </div>
       </section>
