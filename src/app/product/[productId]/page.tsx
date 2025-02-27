@@ -4,7 +4,9 @@ import tree2 from "../../../assets/images/Tree2.png";
 import tree3 from "../../../assets/images/Tree3.png";
 import tree4 from "../../../assets/images/Tree4.png";
 import tree5 from "../../../assets/images/Tree5.png";
-
+import avatar1 from "../../../assets/images/avatar1.jpg";
+import avatar2 from "../../../assets/images/avatar2.jpg";
+import avatar3 from "../../../assets/images/avatar3.jpg";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
@@ -23,6 +25,36 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const otherTreeImgs = [tree2.src, tree3.src, tree4.src, tree5.src];
 const MAX_STAR_REVIEW = 5;
 const HARD_VALUE_ARRAY = 0;
+
+const reviews = [
+  {
+    avatar: avatar1.src,
+    name: "Mizanur Rahman",
+    commentDate: "Mar 28, 2024",
+    rate: 5,
+    title: "Excellent watch for the price",
+    comment:
+      "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu.",
+  },
+  {
+    avatar: avatar2.src,
+    name: "Akash Basak",
+    commentDate: "Mar 28, 2024",
+    rate: 5,
+    title: "Excellent watch for the price",
+    comment:
+      "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu.",
+  },
+  {
+    avatar: avatar3.src,
+    name: "Jon Abraham",
+    commentDate: "Mar 28, 2024",
+    rate: 5,
+    title: "Excellent watch for the price",
+    comment:
+      "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu.",
+  },
+];
 
 export default function ProductDetailsPage() {
   return (
@@ -148,71 +180,131 @@ export default function ProductDetailsPage() {
       </section>
 
       <section>
-        <div className="container-cs px-4 pb-16">
+        <div className="container-cs px-4 pb-16 md:px-0 md:pb-[60px] xl:pb-20">
           <Tabs defaultValue="productDescription">
-            <TabsList className="gap-x-16">
+            <TabsList className="gap-x-16 xl:gap-x-20">
               <TabsTrigger
                 value="productDescription"
-                className="px-0 rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 font-dm-serif-display text-[14px] leading-[22px] py-3 text-neutral-600 data-[state=active]:text-primary-500 data-[state=active]:shadow-none border-b-[1px] border-b-transparent data-[state=active]:border-b-primary-500"
+                className={cn(
+                  "px-0 rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 font-dm-serif-display text-[14px] leading-[22px] py-3 text-neutral-600 data-[state=active]:text-primary-500 data-[state=active]:shadow-none border-b-[1px] border-b-transparent data-[state=active]:border-b-primary-500",
+                  "md:text-desktop-h6 xl:text-desktop-h5",
+                )}
               >
                 PRODUCT DESCRIPTION
               </TabsTrigger>
               <TabsTrigger
                 value="review"
-                className="px-0 rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 font-dm-serif-display text-[14px] leading-[22px] py-3 text-neutral-600 data-[state=active]:text-primary-500 data-[state=active]:shadow-none border-b-[1px] border-b-transparent data-[state=active]:border-b-primary-500"
+                className={cn(
+                  "px-0 rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 font-dm-serif-display text-[14px] leading-[22px] py-3 text-neutral-600 data-[state=active]:text-primary-500 data-[state=active]:shadow-none border-b-[1px] border-b-transparent data-[state=active]:border-b-primary-500",
+                  "md:text-desktop-h6 xl:text-desktop-h5",
+                )}
               >
                 REVIEW
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="productDescription" className="px-4 mt-5">
+            <TabsContent value="productDescription" className="px-4 mt-5 xl:mt-8">
               <ul className="list-disc space-y-2">
-                <li className="text-body-md text-neutral-600">
+                <li className="text-body-md xl:text-body-lg text-neutral-600">
                   Shipping & Import Fees Deposit to Bangladesh Details vailable at a lower price from other
                 </li>
-                <li className="text-body-md text-neutral-600">Sellers that may not offer free Prime shipping.</li>
-                <li className="text-body-md text-neutral-600">Case: Polished Gold-tone steel + black top ring</li>
-                <li className="text-body-md text-neutral-600">Strap: Black silicone with buckle closure</li>
-                <li className="text-body-md text-neutral-600">Strap Length: 190mm</li>
-                <li className="text-body-md text-neutral-600">Dial Features: Day, date & 24 hr int'l time display</li>
-                <li className="text-body-md text-neutral-600">Dial Features: Day, date & 24 hr int'l time display</li>
-                <li className="text-body-md text-neutral-600">Dial Color: Black</li>
+                <li className="text-body-md xl:text-body-lg text-neutral-600">
+                  Sellers that may not offer free Prime shipping.
+                </li>
+                <li className="text-body-md xl:text-body-lg text-neutral-600">
+                  Case: Polished Gold-tone steel + black top ring
+                </li>
+                <li className="text-body-md xl:text-body-lg text-neutral-600">
+                  Strap: Black silicone with buckle closure
+                </li>
+                <li className="text-body-md xl:text-body-lg text-neutral-600">Strap Length: 190mm</li>
+                <li className="text-body-md xl:text-body-lg text-neutral-600">
+                  Dial Features: Day, date & 24 hr int'l time display
+                </li>
+                <li className="text-body-md xl:text-body-lg text-neutral-600">
+                  Dial Features: Day, date & 24 hr int'l time display
+                </li>
+                <li className="text-body-md xl:text-body-lg text-neutral-600">Dial Color: Black</li>
               </ul>
             </TabsContent>
-            <TabsContent value="review" className="mt-5">
-              <div className="bg-white-cs rounded-[4px] py-2 px-4 flex gap-x-4">
-                <div className="flex flex-col justify-center items-center pr-6 relative after:content[''] after:absolute after:right-0 after:h-full after:w-[1px] after:bg-neutral-200">
-                  <p className="text-body-xl font-semibold text-neutral-900">4.8</p>
-                  <div className="flex items-center gap-x-[2px] mb-1">
-                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
-                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
-                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
-                    <Star className="h-4 w-4 stroke-[#EAB308] fill-[#EAB308]" />
-                    <Star className="h-4 w-4 stroke-neutral-400 fill-neutral-400" />
+            <TabsContent value="review" className="mt-5 xl:mt-8">
+              <div className="bg-white-cs rounded-[4px] py-2 px-4 flex gap-x-4 md:px-[102px] md:py-4 md:gap-x-[88px] xl:py-[36.5px] xl:px-[164.72px] xl:gap-x-[155px]">
+                <div className="flex flex-col justify-center items-center pr-6 md:pr-[88px] xl:pr-[155px] relative after:content[''] after:absolute after:right-0 after:h-full after:w-[1px] after:bg-neutral-200">
+                  <p className="text-body-xl font-semibold text-neutral-900 md:text-[32px] md:leading-10 md:font-bold xl:text-[56px] xl:leading-[72px]">
+                    4.8
+                  </p>
+                  <div className="flex items-center gap-x-[2px] mb-1 md:gap-x-1 md:mb-2 xl:mb-3">
+                    <Star className="h-4 w-4 md:h-5 md:w-5 stroke-[#FF9900] fill-[#FF9900]" />
+                    <Star className="h-4 w-4 md:h-5 md:w-5 stroke-[#FF9900] fill-[#FF9900]" />
+                    <Star className="h-4 w-4 md:h-5 md:w-5 stroke-[#FF9900] fill-[#FF9900]" />
+                    <Star className="h-4 w-4 md:h-5 md:w-5 stroke-[#FF9900] fill-[#FF9900]" />
+                    <Star className="h-4 w-4 md:h-5 md:w-5 stroke-neutral-400 fill-neutral-400" />
                   </div>
-                  <p className="text-body-sm text-neutral-600">54 reviews</p>
+                  <p className="text-body-sm text-neutral-600 md:text-body-md xl:text-body-lg">54 reviews</p>
                 </div>
                 <div className="flex-1 space-y-[2px] pb-[7px]">
-                  <div className="flex items-center gap-x-1">
-                    <span className="w-4 shrink-0 text-body-sm">5</span>
-                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[80%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  <div className="flex items-center gap-x-1 xl:gap-x-3">
+                    <span className="w-4 shrink-0 text-body-sm xl:text-body-lg xl:font-medium">5</span>
+                    <div className="relative bg-neutral-200 h-1 xl:h-2 w-full rounded-[4px] xl:rounded-[8px] after:content[''] after:absolute after:h-1 xl:after:h-2 after:w-[80%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
                   </div>
-                  <div className="flex items-center gap-x-1">
-                    <span className="w-4 shrink-0 text-body-sm">4</span>
-                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[60%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  <div className="flex items-center gap-x-1 xl:gap-x-3">
+                    <span className="w-4 shrink-0 text-body-sm xl:text-body-lg xl:font-medium">4</span>
+                    <div className="relative bg-neutral-200 h-1 xl:h-2 w-full rounded-[4px] xl:rounded-[8px] after:content[''] after:absolute after:h-1 xl:after:h-2 after:w-[60%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
                   </div>
-                  <div className="flex items-center gap-x-1">
-                    <span className="w-4 shrink-0 text-body-sm">3</span>
-                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[50%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  <div className="flex items-center gap-x-1 xl:gap-x-3">
+                    <span className="w-4 shrink-0 text-body-sm xl:text-body-lg xl:font-medium">3</span>
+                    <div className="relative bg-neutral-200 h-1 xl:h-2 w-full rounded-[4px] xl:rounded-[8px] after:content[''] after:absolute after:h-1 xl:after:h-2 after:w-[50%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
                   </div>
-                  <div className="flex items-center gap-x-1">
-                    <span className="w-4 shrink-0 text-body-sm">2</span>
-                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[30%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  <div className="flex items-center gap-x-1 xl:gap-x-3">
+                    <span className="w-4 shrink-0 text-body-sm xl:text-body-lg xl:font-medium">2</span>
+                    <div className="relative bg-neutral-200 h-1 xl:h-2 w-full rounded-[4px] xl:rounded-[8px] after:content[''] after:absolute after:h-1 xl:after:h-2 after:w-[30%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
                   </div>
-                  <div className="flex items-center gap-x-1">
-                    <span className="w-4 shrink-0 text-body-sm">1</span>
-                    <div className="relative bg-neutral-200 h-1 w-full rounded-[4px] after:content[''] after:absolute after:h-1 after:w-[10%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
+                  <div className="flex items-center gap-x-1 xl:gap-x-3">
+                    <span className="w-4 shrink-0 text-body-sm xl:text-body-lg xl:font-medium">1</span>
+                    <div className="relative bg-neutral-200 h-1 xl:h-2 w-full rounded-[4px] xl:rounded-[8px] after:content[''] after:absolute after:h-1 xl:after:h-2 after:w-[10%] after:bg-[#F59E0B] after:rounded-[4px]"></div>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-2 bg-white-cs py-4 px-2 space-y-4 md:space-y-3 xl:mt-5 xl:py-6 xl:px-5 xl:space-y-5">
+                {reviews.map((review, index) => (
+                  <div key={index}>
+                    <div className="flex items-center gap-x-1 md:gap-x-2 xl:gap-x-3">
+                      <div className="h-6 w-6 rounded-full overflow-hidden relative xl:h-10 xl:w-10">
+                        <Image src={review.avatar} fill alt="avatar" />
+                      </div>
+                      <div>
+                        <p className="text-body-sm text-neutral-900 md:text-body-lg md:font-medium">{review.name}</p>
+                        <p className="text-body-sm text-neutral-500">{review.commentDate}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1 mt-2 md:mt-4 xl:mt-6">
+                      <div className="flex items-center gap-x-1">
+                        {new Array(review.rate).fill(HARD_VALUE_ARRAY).map((_, index) => (
+                          <Star
+                            key={index}
+                            className="h-3 w-3 md:h-4 md:w-4 xl:h-5 xl:w-5 stroke-[#FF9900] fill-[#FF9900]"
+                          />
+                        ))}
+                        {new Array(MAX_STAR_REVIEW - review.rate).fill(HARD_VALUE_ARRAY).map((_, index) => (
+                          <Star
+                            key={index}
+                            className="h-3 w-3 md:h-4 md:w-4 xl:h-5 xl:w-5 stroke-neutral-600 fill-neutral-600"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="mt-1 text-body-sm text-neutral-900 md:font-medium xl:mt-2 xl:text-body-lg">
+                      {review.title}
+                    </p>
+                    <p className="mt-1 text-body-sm text-neutral-600 xl:mt-2 xl:text-body-lg">{review.comment}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="hidden md:flex md:justify-center md:mt-6 xl:mt-8">
+                <button className="rounded-[4px] border border-primary-500 text-body-lg font-medium text-primary-500 py-3 w-[140px] flex justify-center">
+                  View More
+                </button>
               </div>
             </TabsContent>
           </Tabs>
