@@ -8,6 +8,8 @@ import Filter from "./Filter";
 import Heart from "./Heart";
 import Instagram from "./Instagram";
 import Menu from "./Menu";
+import Minus from "./Minus";
+import Plus from "./Plus";
 import Return from "./Return";
 import Search from "./Search";
 import SecurityPayment from "./SecurityPayment";
@@ -34,6 +36,8 @@ const Icons = {
   Contact,
   Filter,
   ChevronUp,
+  Minus,
+  Plus,
 };
 
 export default Icons;
