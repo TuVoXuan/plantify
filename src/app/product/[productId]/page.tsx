@@ -284,10 +284,10 @@ export default function ProductDetailsPage() {
                 </li>
                 <li className="text-body-md xl:text-body-lg text-neutral-600">Strap Length: 190mm</li>
                 <li className="text-body-md xl:text-body-lg text-neutral-600">
-                  Dial Features: Day, date & 24 hr int'l time display
+                  Dial Features: Day, date & 24 hr intl time display
                 </li>
                 <li className="text-body-md xl:text-body-lg text-neutral-600">
-                  Dial Features: Day, date & 24 hr int'l time display
+                  Dial Features: Day, date & 24 hr intl time display
                 </li>
                 <li className="text-body-md xl:text-body-lg text-neutral-600">Dial Color: Black</li>
               </ul>

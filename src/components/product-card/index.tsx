@@ -1,7 +1,6 @@
-import React from "react";
-import tree from "../../assets/images/Tree1.png";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Icons from "../icons";
 
 interface ProductCardProps {
@@ -23,8 +22,14 @@ export default function ProductCard({
   discountPrice,
   className,
 }: ProductCardProps) {
+  const router = useRouter();
+
+  const handleClickCard = () => {
+    router.push(`/product/1`);
+  };
+
   return (
-    <div className={cn("relative group overflow-hidden", className)}>
+    <div className={cn("relative group overflow-hidden cursor-pointer", className)} onClick={handleClickCard}>
       <div className="hidden absolute top-3 xl:flex flex-col gap-y-3 transition-all duration-500 ease-in-out right-0 translate-x-full group-hover:translate-x-0 group-hover:right-[13px]">
         <button className="flex items-center justify-center bg-white-cs h-[48px] w-[48px] rounded-full shadow-cs-1">
           <Icons.ShoppingBag />
@@ -32,7 +37,10 @@ export default function ProductCard({
         <button className="flex items-center justify-center bg-white-cs h-[48px] w-[48px] rounded-full shadow-cs-1">
           <Icons.Heart />
         </button>
-        <button className="flex items-center justify-center bg-white-cs h-[48px] w-[48px] rounded-full shadow-cs-1">
+        <button
+          onClick={handleClickCard}
+          className="flex items-center justify-center bg-white-cs h-[48px] w-[48px] rounded-full shadow-cs-1"
+        >
           <Icons.Eye />
         </button>
       </div>
