@@ -1,4 +1,5 @@
 import typographyPlugin from "./src/styles/Typography";
+import layoutPlugin from "./src/styles/Layout";
 
 /** @type {import('tailwindcss').Config} */
 export const content = ["./src/**/*.{js,ts,jsx,tsx,mdx}"];
@@ -11,26 +12,26 @@ export const theme = {
     colors: {
       "white-cs": "#ffffff",
       "black-cs": "#0a0a0a",
-      "neutral-50": "#fafafa",
-      "neutral-100": "#f5f5f5",
-      "neutral-200": "#e5e5e5",
-      "neutral-300": "#d4d4d4",
-      "neutral-400": "#a3a3a3",
-      "neutral-500": "#737373",
-      "neutral-600": "#525252",
-      "neutral-700": "#404040",
-      "neutral-800": "#262626",
-      "neutral-900": "#171717",
-      "primary-50": "#e6f1ef",
-      "primary-100": "#c2ddd8",
-      "primary-200": "#91c2b9",
-      "primary-300": "#5ea699",
-      "primary-400": "#2e8b7a",
-      "primary-500": "#00715d",
-      "primary-600": "#00604f",
+      "neutral-50": "#F8FAFC",
+      "neutral-100": "#F1F5F9",
+      "neutral-200": "#E2E8F0",
+      "neutral-300": "#CBD5E1",
+      "neutral-400": "#94A3B8",
+      "neutral-500": "#64748B",
+      "neutral-600": "#475569",
+      "neutral-700": "#334155",
+      "neutral-800": "#1E293B",
+      "neutral-900": "#0F172A",
+      "primary-50": "#E6F1EF",
+      "primary-100": "#C2DDD8",
+      "primary-200": "#91C2B9",
+      "primary-300": "#5EA699",
+      "primary-400": "#2E8B7A",
+      "primary-500": "#00715D",
+      "primary-600": "#00604F",
       "primary-700": "#005042",
       "primary-800": "#004035",
-      "primary-900": "#00332a",
+      "primary-900": "#00332A",
       "success-50": "#f0fdf4",
       "success-100": "#dcfce7",
       "success-200": "#bbf7d0",
@@ -81,6 +82,20 @@ export const theme = {
       "2xl": "1440px",
       "3xl": "1920px",
     },
+    boxShadow: {
+      cs: "0 4px 20px 0 rgba(0, 0, 0, 0.08)",
+      "cs-1": "0 10px 14px -4px rgba(15, 28, 51, 0.08), 0 2px 8px -4px rgba(15, 28, 51, 0.05)",
+      "cs-2": "0 16px 20px -4px rgba(15, 28, 51, 0.1), 0 6px 8px -4px rgba(15, 28, 51, 0.04)",
+    },
+  },
+  container: {
+    center: true,
+    screens: {
+      md: "754px",
+      lg: "984px",
+      xl: "1200px",
+      "2xl": "1280px",
+    },
   },
 };
-export const plugins = [typographyPlugin];
+export const plugins = [typographyPlugin, layoutPlugin];
