@@ -5,10 +5,10 @@ import Image from "next/image";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, useDotButton } from "@/components/ui/carousel";
 import { useState } from "react";
 
-import Checked from "../../assets/images/30-Checked.png";
-import facebook from "../../assets/images/Facebook.png";
-import instagram from "../../assets/images/Instagram.png";
-import twitter from "../../assets/images/Twitter.png";
+import Checked from "../../assets/images/Checked.svg";
+import facebook from "../../assets/images/ic_baseline-facebook.svg";
+import instagram from "../../assets/images/Instagram.svg";
+import twitter from "../../assets/images/Twitter.svg";
 
 import person1 from "../../assets/images/avatar1.jpg";
 import person2 from "../../assets/images/avatar2.jpg";
@@ -70,17 +70,17 @@ export default function Home() {
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(whatTheySayCarousel);
 
   return (
-    <main className="bg-neutral-50 pt-[98px]">
+    <main className="bg-neutral-50 pt-[96px]">
       {/* Plan for Office and Home */}
       <section>
         <div className="container-cs px-4 flex flex-col gap-y-12 pb-12 md:gap-y-14  xl:gap-y-[120px] md:pb-[72px]  xl:gap-x-20 xl:pb-[120px]">
           <div className="flex flex-col gap-y-5 md:flex-row md:items-center md:gap-x-12 xl:gap-x-20">
             <div className="flex flex-col items-center md:w-[270px] md:items-start md:shrink-0 xl:w-[466px]">
               <h3 className="text-body-md  xl:text-body-xl text-primary-500 mb-2 xl:mb-4 ">Our Story</h3>
-              <p className=" text-desktop-h6 md:text-desktop-h5 xl:text-desktop-h1 text-center md:text-left text-neutral-900 ">
+              <p className="text-desktop-h6 md:text-desktop-h5 xl:text-desktop-h1 text-center md:text-left text-neutral-900 sm:whitespace-normal whitespace-nowrap">
                 We provide the best quality Plants in Bangladesh!
               </p>
-              <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-500 my-3 md:mb-6 xl:mb-8">
+              <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-600 my-3 md:mb-6 xl:mb-8">
                 Welcome to Iconic Style, your premier destination for exquisite fashion products including three-piece
                 ensembles and sarees. At Iconic Style, we believe that fashion is a
               </p>
@@ -107,7 +107,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative w-full h-[217px] md:h-[217px] xl:h-[367px]">
+            <div className="relative w-full h-[217px] md:h-[217px] xl:h-[367px] rounded-[4px]">
               <Image src={plantForOffice.src} fill className="object-center object-cover" alt="plant for office" />
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
               <p className=" text-desktop-h6 md:text-desktop-h5 xl:text-desktop-h1 text-center md:text-left text-neutral-900 ">
                 A Journey through the plants to the Natural beauty.
               </p>
-              <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-500 my-3 md:mb-6 xl:mb-8">
+              <p className="text-body-sm md:text-body-md xl:text-body-lg text-center md:text-left text-neutral-600 my-3 md:mb-6 xl:mb-8">
                 Welcome to Iconic Style, your premier destination for exquisite fashion products including three-piece
                 ensembles and sarees. At Iconic Style, we believe that fashion is a r exquisite fashion products
               </p>
@@ -128,7 +128,7 @@ export default function Home() {
                 <Image src={twitter} alt="Twitter" width={20} height={20} className="w-5 h-5 xl:w-8 xl:h-8" />
               </div>
             </div>
-            <div className="relative w-full h-[217px] md:h-[230px] xl:h-[388px]">
+            <div className="relative w-full h-[217px] md:h-[230px] xl:h-[388px] rounded-[4px]">
               <Image src={plantForHome.src} fill className="object-center object-cover" alt="plant for office" />
             </div>
           </div>
@@ -141,17 +141,17 @@ export default function Home() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="xl:w-[202px] h-[84px] xl:h-[150px] bg-white rounded-lg flex flex-col items-center justify-center p-2 xl:p-6"
+                className="xl:w-[202px] h-[84px] xl:h-[150px] bg-white rounded-lg flex flex-col items-center justify-center p-2 xl:p-6 gap-[4px]"
               >
                 <p className="text-neutral-900 text-desktop-h5 xl:text-desktop-h2">{stat.value}</p>
-                <p className="text-neutral-600 text-body-md xl:text-body-xl whitespace-nowrap">{stat.label}</p>
+                <p className="text-neutral-600 text-body-md xl:text-body-xl whitespace-nowrap ">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       {/* What people says */}
-      <section className="bg-primary-50">
+      <section className="bg-primary-50 mt-[48px] mb-[80px] sm:mt-[64px] sm:mb-[88px] xl:mt-[120px] xl:mb-[140px]">
         <div className="container-cs px-4 py-[34px] md:py-[48px] md:px-0">
           <h2 className="text-desktop-h5 md:text-desktop-h4 xl:text-desktop-h1 text-neutral-900 text-center mb-3 md:mb-4 xl:mn-5">
             What People Says
