@@ -4,12 +4,13 @@ import tree2 from "../../../assets/images/Tree2.png";
 import tree3 from "../../../assets/images/Tree3.png";
 import tree4 from "../../../assets/images/Tree4.png";
 import tree5 from "../../../assets/images/Tree5.png";
+import tree6 from "../../../assets/images/Tree6.png";
 import avatar1 from "../../../assets/images/avatar1.jpg";
 import avatar2 from "../../../assets/images/avatar2.jpg";
 import avatar3 from "../../../assets/images/avatar3.jpg";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Icons from "@/components/icons";
 import {
   Breadcrumb,
@@ -21,6 +22,9 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { tree } from "next/dist/build/templates/app-page";
+import ProductCard from "@/components/product-card";
 
 const otherTreeImgs = [tree2.src, tree3.src, tree4.src, tree5.src];
 const MAX_STAR_REVIEW = 5;
@@ -53,6 +57,64 @@ const reviews = [
     title: "Excellent watch for the price",
     comment:
       "Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu.",
+  },
+];
+
+const trees = [
+  {
+    thumbnail: tree1.src,
+    name: "Petlas MultiAction PT565",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree2.src,
+    name: "Tourador X ALL CLIMATE TF1",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree3.src,
+    name: "Kumho Solus 4S HA32",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree1.src,
+    name: "Petlas MultiAction PT565",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree4.src,
+    name: "Vineyard Reach",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
+  },
+  {
+    thumbnail: tree5.src,
+    name: "Maxtrek Relamax 4seasons",
+    originalPrice: 25,
+    discountPrice: 20,
+  },
+  {
+    thumbnail: tree3.src,
+    name: "Hankook Kinergy 4S 2 (H750)",
+    originalPrice: 25,
+    discountPrice: 20,
+    discount: 50,
+  },
+  {
+    thumbnail: tree6.src,
+    name: "Petlas MultiAction PT565",
+    originalPrice: 25,
+    discountPrice: 20,
+    isNew: true,
   },
 ];
 
@@ -178,7 +240,7 @@ export default function ProductDetailsPage() {
           </div>
         </div>
       </section>
-
+      {/* Reviews section */}
       <section>
         <div className="container-cs px-4 pb-16 md:px-0 md:pb-[60px] xl:pb-20">
           <Tabs defaultValue="productDescription">
@@ -308,6 +370,44 @@ export default function ProductDetailsPage() {
               </div>
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* Recently Discount */}
+      <section>
+        <div className="container-cs px-4 pb-20 md:px-0">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-desktop-h5 text-neutral-900">Recently Discounted</h3>
+            <div className="flex items-center gap-x-14">
+              <span className="text-body-md text-primary-500 font-medium">View All</span>
+              <div className="hidden md:flex items-center gap-x-4">
+                <button className="flex items-center justify-center h-8 w-8 rounded-full disabled:bg-neutral-200">
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <button className="flex items-center justify-center h-8 w-8 rounded-full disabled:bg-neutral-200">
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <Carousel>
+            <CarouselContent className="-ml-5 md:-ml-[27.2px] xl:-ml-[64px]">
+              {trees.map((tree, index) => (
+                <CarouselItem key={index} className="basis-auto">
+                  <ProductCard
+                    className="w-[155px]"
+                    key={index}
+                    name={tree.name}
+                    thumbnail={tree.thumbnail}
+                    originalPrice={tree.originalPrice}
+                    discountPrice={tree.discountPrice}
+                    tagType={tree.isNew ? "new" : tree.discount ? "discount" : undefined}
+                    tagLabel={tree.isNew ? "NEW" : tree.discount ? `-${tree.discount}%` : undefined}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
     </main>

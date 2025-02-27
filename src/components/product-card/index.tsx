@@ -11,6 +11,7 @@ interface ProductCardProps {
   name: string;
   originalPrice: number;
   discountPrice?: number;
+  className?: string;
 }
 
 export default function ProductCard({
@@ -20,9 +21,10 @@ export default function ProductCard({
   name,
   originalPrice,
   discountPrice,
+  className,
 }: ProductCardProps) {
   return (
-    <div className="relative group overflow-hidden">
+    <div className={cn("relative group overflow-hidden", className)}>
       <div className="hidden absolute top-3 xl:flex flex-col gap-y-3 transition-all duration-500 ease-in-out right-0 translate-x-full group-hover:translate-x-0 group-hover:right-[13px]">
         <button className="flex items-center justify-center bg-white-cs h-[48px] w-[48px] rounded-full shadow-cs-1">
           <Icons.ShoppingBag />
