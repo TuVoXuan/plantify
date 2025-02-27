@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
 
-export default plugin(({ addComponents, config }) => {
+export default plugin(({ addComponents }) => {
   addComponents({
     ".container-cs": {
       maxWidth: "100%",

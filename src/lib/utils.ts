@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { extendTailwindMerge, twMerge } from "tailwind-merge";
+import { extendTailwindMerge } from "tailwind-merge";
 
 const customTwMerge = extendTailwindMerge({
   extend: {
