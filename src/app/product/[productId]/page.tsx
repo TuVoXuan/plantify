@@ -1,4 +1,21 @@
-import React from "react";
+"use client";
+import Icons from "@/components/icons";
+import ProductCard from "@/components/product-card";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, usePrevNextButtons } from "@/components/ui/carousel";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import tree1 from "../../../assets/images/Tree1.png";
 import tree2 from "../../../assets/images/Tree2.png";
 import tree3 from "../../../assets/images/Tree3.png";
@@ -8,23 +25,6 @@ import tree6 from "../../../assets/images/Tree6.png";
 import avatar1 from "../../../assets/images/avatar1.jpg";
 import avatar2 from "../../../assets/images/avatar2.jpg";
 import avatar3 from "../../../assets/images/avatar3.jpg";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import Icons from "@/components/icons";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import Link from "next/link";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { tree } from "next/dist/build/templates/app-page";
-import ProductCard from "@/components/product-card";
 
 const otherTreeImgs = [tree2.src, tree3.src, tree4.src, tree5.src];
 const MAX_STAR_REVIEW = 5;
@@ -119,6 +119,10 @@ const trees = [
 ];
 
 export default function ProductDetailsPage() {
+  const [recentlyDiscountCarousel, setRecentlyDiscountCarousel] = useState<CarouselApi>();
+  const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
+    usePrevNextButtons(recentlyDiscountCarousel);
+
   return (
     <main className="bg-neutral-50">
       <section className="pb-12 md:pb-[56px] xl:pb-[72px]">
@@ -375,27 +379,35 @@ export default function ProductDetailsPage() {
 
       {/* Recently Discount */}
       <section>
-        <div className="container-cs px-4 pb-20 md:px-0">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-desktop-h5 text-neutral-900">Recently Discounted</h3>
-            <div className="flex items-center gap-x-14">
-              <span className="text-body-md text-primary-500 font-medium">View All</span>
+        <div className="container-cs px-4 pb-20 md:px-0 xl:pb-[140px]">
+          <div className="flex justify-between items-center mb-6 md:mb-12">
+            <h3 className="text-desktop-h5 text-neutral-900 xl:text-desktop-h2">Recently Discounted</h3>
+            <div className="flex items-center gap-x-14 xl:gap-x-[70px]">
+              <span className="text-body-md text-primary-500 font-medium xl:text-body-xl">View All</span>
               <div className="hidden md:flex items-center gap-x-4">
-                <button className="flex items-center justify-center h-8 w-8 rounded-full disabled:bg-neutral-200">
-                  <ChevronLeft className="h-4 w-4" />
+                <button
+                  disabled={prevBtnDisabled}
+                  onClick={onPrevButtonClick}
+                  className="flex items-center justify-center h-8 w-8 xl:h-12 xl:w-12 rounded-full disabled:bg-neutral-200 disabled:text-neutral-500 bg-primary-500 text-white"
+                >
+                  <ChevronLeft className="h-4 w-4 xl:h-6 xl:w-6" />
                 </button>
-                <button className="flex items-center justify-center h-8 w-8 rounded-full disabled:bg-neutral-200">
-                  <ChevronRight className="h-4 w-4" />
+                <button
+                  disabled={nextBtnDisabled}
+                  onClick={onNextButtonClick}
+                  className="flex items-center justify-center h-8 w-8 xl:h-12 xl:w-12 rounded-full disabled:bg-neutral-200 disabled:text-neutral-500 bg-primary-500 text-white"
+                >
+                  <ChevronRight className="h-4 w-4 xl:h-6 xl:w-6" />
                 </button>
               </div>
             </div>
           </div>
-          <Carousel>
-            <CarouselContent className="-ml-5 md:-ml-[27.2px] xl:-ml-[64px]">
+          <Carousel setApi={setRecentlyDiscountCarousel}>
+            <CarouselContent className="-ml-3 md:-ml-[18px] xl:-ml-6">
               {trees.map((tree, index) => (
-                <CarouselItem key={index} className="basis-auto">
+                <CarouselItem key={index} className="pl-3 md:pl-[18px] xl:pl-6 basis-auto">
                   <ProductCard
-                    className="w-[155px]"
+                    className="w-[155px] md:w-[175px] xl:w-[302px]"
                     key={index}
                     name={tree.name}
                     thumbnail={tree.thumbnail}
