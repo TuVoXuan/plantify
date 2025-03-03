@@ -28,10 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(dmSerifDisplay.variable, oneset.variable, "relative 2xl:max-w-[1440px] 2xl:mx-auto")}>
-        <Header />
-        {children}
-        <Footer />
+      <body className={cn(dmSerifDisplay.variable, oneset.variable)}>
+        <main className="relative 2xl:max-w-[1440px] 2xl:mx-auto">
+          <Header />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
