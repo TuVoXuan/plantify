@@ -14,6 +14,7 @@ import Return from "./Return";
 import Search from "./Search";
 import SecurityPayment from "./SecurityPayment";
 import ShoppingBag from "./ShoppingBag";
+import Trash from "./Trash";
 import Truck from "./Truck";
 import Twitter from "./Twitter";
 import User from "./User";
@@ -38,6 +39,7 @@ const Icons = {
   ChevronUp,
   Minus,
   Plus,
+  Trash,
 };
 
 export default Icons;

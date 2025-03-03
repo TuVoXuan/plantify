@@ -1,10 +1,14 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../assets/images/Logo.png";
 import Icons from "../icons";
 import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
+
   return (
     <header className="absolute top-0 left-0 right-0">
       <div className="bg-white-cs shadow-cs md:shadow-none py-5 px-4 flex justify-between md:bg-transparent md:py-3 md:px-0 md:border-b md:border-b-neutral-300 xl:py-5 container-cs">
@@ -45,13 +49,15 @@ export default function Header() {
             </DrawerContent>
           </Drawer>
 
-          <Image
-            src={Logo}
-            height={37}
-            width={122}
-            alt="plantify logo"
-            className="w-[88px] h-[27px] md:h-[26px] md:w-[86px] xl:h-[37px] xl:w-[122px]"
-          />
+          <Link href={"/"}>
+            <Image
+              src={Logo}
+              height={37}
+              width={122}
+              alt="plantify logo"
+              className="w-[88px] h-[27px] md:h-[26px] md:w-[86px] xl:h-[37px] xl:w-[122px]"
+            />
+          </Link>
         </div>
 
         <nav className="items-center gap-x-6 hidden md:flex xl:gap-x-10">
@@ -88,7 +94,10 @@ export default function Header() {
           <button className="h-8 w-8 xl:h-10 xl:w-10 items-center justify-center hidden md:flex">
             <Icons.Heart />
           </button>
-          <button className="h-8 w-8 xl:h-10 xl:w-10 flex items-center justify-center">
+          <button
+            onClick={() => router.push("/shopping-cart")}
+            className="h-8 w-8 xl:h-10 xl:w-10 flex items-center justify-center"
+          >
             <Icons.ShoppingBag />
           </button>
           <button className="h-8 w-8 xl:h-10 xl:w-10 items-center justify-center hidden md:flex">
