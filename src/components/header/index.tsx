@@ -91,7 +91,10 @@ export default function Header() {
           <button className="h-8 w-8 xl:h-10 xl:w-10 flex items-center justify-center">
             <Icons.Search />
           </button>
-          <button className="h-8 w-8 xl:h-10 xl:w-10 items-center justify-center hidden md:flex">
+          <button
+            onClick={() => router.push("/favorite")}
+            className="h-8 w-8 xl:h-10 xl:w-10 items-center justify-center hidden md:flex"
+          >
             <Icons.Heart />
           </button>
           <button
