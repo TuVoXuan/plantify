@@ -43,8 +43,8 @@ export default function ContactUs() {
               Contact Us
             </h3>
             <p className="text-body-md text-neutral-600 mb-4 md:mb-10 xl:text-body-xl">
-              "Have inquiries about our fashion offerings? Need assistance with orders or wholesale partnerships? Reach
-              out to us, and we'll provide the support you require."
+              {` "Have inquiries about our fashion offerings? Need assistance with orders or wholesale partnerships? Reach
+              out to us, and we'll provide the support you require."`}
             </p>
             <div className="space-y-4 xl:space-y-8">
               <div className="flex items-center gap-x-2 xl:gap-x-5">
